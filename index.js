@@ -132,17 +132,17 @@ app.post('/allPartners', (req, res) => {
 //PUSHER
 
 app.post('/pusher', (req, res) => {
-    var data = {
-         "data": req.query
+    var notifications = {
+         "notifications": req.query
     }
     var pusher = new Pusher({
        appId: '906630',
-       key: '19f814902a00899fa4c5',
+       key: 'ea9fe3985cb69d3aff5d',
        secret: 'f4d20401c2e102900b46',
        cluster: 'ap1',
        encrypted: true
      });
-        pusher.trigger('my-channel', 'my-event', data); 
+        pusher.trigger('my-channel', 'my-event', notifications); 
         res.json({
          message: 'Successful'
      })
