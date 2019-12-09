@@ -61,3 +61,16 @@ module.exports.updatePusher = (req, res) => {
         }
     })
 }
+
+module.exports.needCount = (req, res) => {
+    Pusher.find({ read: true }, (err, pusher) => {
+        if (err) {
+            res.status(404).send(err)
+        } else if (pusher != null) {
+            console.log(pusher)
+            res.json({ pusher })
+        } else {
+            res.status(404).send("Error")
+        }
+    })
+}

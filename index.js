@@ -48,6 +48,7 @@ app.delete('/deletNotification/:notify', Pusher.deleteNotification)
 app.get('/notify/:email', Pusher.findPusher)
 app.get('/findNot/:track', Pusher.findPusherTrack)
 app.get('/updateNotif/:id', Pusher.updatePusher)
+app.get('/count', Pusher.needCount)
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
