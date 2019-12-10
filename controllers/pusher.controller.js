@@ -63,7 +63,7 @@ module.exports.updatePusher = (req, res) => {
 }
 
 module.exports.needCount = (req, res) => {
-    Pusher.find({ read: true }, (err, pusher) => {
+    Pusher.find({ email: req.params.email, read: false }, (err, pusher) => {
         if (err) {
             res.status(404).send(err)
         } else if (pusher != null) {
